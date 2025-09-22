@@ -1,6 +1,6 @@
 # User Service (Spring Boot REST API)
 
-Jednoduchá mikroslužba pro správu uživatelů.
+Jednoduchá mikroslužba pro správu uživatelů.- obsahuje prodrobne popsany YAML.
 
 ## Spuštění
 ```bash
