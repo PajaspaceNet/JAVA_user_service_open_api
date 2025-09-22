@@ -2,7 +2,7 @@
 
 Jednoduchá mikroslužba pro správu uživatelů.- obsahuje prodrobne popsany YAML.
 <pre>
-JAVA_user_service_open_api/
+JAVA_user_service_openapi/
  ├── src/
  │    └── main/
  │         └── java/com/example/users/
