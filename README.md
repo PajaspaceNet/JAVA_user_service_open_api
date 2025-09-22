@@ -1,6 +1,17 @@
 # User Service (Spring Boot REST API)
 
 Jednoduchá mikroslužba pro správu uživatelů.- obsahuje prodrobne popsany YAML.
+<pre>
+JAVA_user_service_open_api/
+ ├── src/
+ │    └── main/
+ │         └── java/com/example/users/
+ │              ├── User.java
+ │              ├── UserController.java
+ │              └── UserServiceApplication.java
+ ├── pom.xml
+ └── README.md
+</pre>
 
 ## Spuštění
 ```bash
