@@ -1,44 +1,57 @@
+# Verze OpenAPI specifikace
 openapi: 3.0.0
+
 info:
+  # Název API – zobrazí se v dokumentaci (Swagger UI)
   title: User Service API
+  # Verze API – můžeš měnit při nových verzích
   version: 1.0.0
+
+# Definice všech dostupných cest (endpointů) v API
 paths:
   /users:
     get:
+      # Krátký popis, co endpoint dělá
       summary: Get all users
       responses:
-        '200':
+        '200':  # HTTP status kód 200 = OK
           description: A list of users
           content:
             application/json:
               schema:
+                # Vrací pole (array) objektů typu User
                 type: array
                 items:
                   $ref: '#/components/schemas/User'
+
     post:
       summary: Create a new user
+      # Tělo požadavku (co musí klient poslat v JSONu)
       requestBody:
         required: true
         content:
           application/json:
             schema:
+              # Odkaz na definici objektu User (viz components níže)
               $ref: '#/components/schemas/User'
       responses:
-        '200':
+        '200':  # Když je vytvoření úspěšné
           description: The created user
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
+
   /users/{id}:
     get:
       summary: Get user by ID
+      # Definice parametru v cestě (path parameter)
       parameters:
-        - name: id
-          in: path
-          required: true
+        - name: id          # název parametru
+          in: path          # je součástí URL cesty (/users/{id})
+          required: true    # povinný
           schema:
-            type: integer
+            type: integer   # datový typ (číslo)
       responses:
         '200':
           description: A single user
@@ -47,12 +60,13 @@ paths:
               schema:
                 $ref: '#/components/schemas/User'
 
+# Definice znovupoužitelných schémat (datových struktur)
 components:
   schemas:
     User:
       type: object
       properties:
         id:
-          type: integer
+          type: integer   # uživatelské ID
         name:
-          type: string
+          type: string    # uživatelské jméno
